@@ -15,8 +15,12 @@
 
     environment.systemPackages = with pkgs; [
       alacritty
-	  gnome.gnome-tweaks
-	  vivaldi
+      gnome.gnome-tweaks
+      vivaldi
     ];
+
+    home-manager.users.${config.homeManager.userName}.home/file = {
+      ".config/alacritty/alacritty.toml".source = ../dotfiles/alacritty.toml;
+    };
   };
 }
